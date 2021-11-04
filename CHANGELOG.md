@@ -1,5 +1,19 @@
 # Changelog
 
+# 3.2.2
+
+- Fixed #438: requests not working correctly on browser platform because request options are not processed correctly
+
+## 3.2.1
+
+- Fixed #425: plugin crashes on Android SDK levels < 24
+- Fixed #418: deprecated AFNetworking method causes app crash (thanks meiram-tr)
+- Fixed #404: wrong timeout implementation (thanks YouYue123)
+
+## 3.2.0
+
+- Feature #420: implement blacklist feature to disable SSL/TLS versions on Android (thanks to @MobisysGmbH)
+
 ## 3.1.1
 
 - Fixed #372: malformed empty multipart request on Android
