@@ -163,7 +163,9 @@ module.exports = function init(exec, cookieHandler, urlUtil, helpers, globalConf
         return sendRequest(url[0], options, success, failure);
       }
 
-      return sendRequest(url[0], options, success, () => {
+      return sendRequest(url[0], options, success, (err) => {
+        if (err.status > 0 || err.status === cordova.plugin.http.ErrorCode.POST_PROCESSING_FAILED || err.status === cordova.plugin.http.ErrorCode.ABORTED) return failure(err);
+
         if (url.length > 2) {
           sendRequest(url.slice(1), options, success, failure);
         } else {
